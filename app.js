@@ -110,6 +110,16 @@ const displayReview = (reviews) => {
 // Call the function to load the reviews
 // loadReview();
 
+// const UserLoad =() =>{
+//   document.getElementById('Login_nv').style.display = 'none';
+//   fetch('https://care-stream-api.onrender.com/users/')
+//    .then(res => res.json())
+//    .then(data => {
+//       if(data){
+
+//       }
+//    })
+// }
 
 
 

@@ -32,20 +32,21 @@ const handleRegistration = (event) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data.success) { 
+          console.log(data);
+          if (data.success) {
             localStorage.setItem("user_data", JSON.stringify(info));
-            document.getElementById("error").innerText = ""; 
-            document.getElementById("sucess_regi").innerText = "Registration successful!";
+            document.getElementById("error").innerText = 'Registration failed';
             setTimeout(() => {
-              window.location.href = "login.html"; 
+              window.location.href = "login.html";
             }, 2000);
           } else {
-            document.getElementById("error").innerText = data.message || "Registration failed. Please try again.";
+            document.getElementById("error").innerText = 'Checked Your Email for Confirmation'
           }
         })
         .catch((error) => {
           console.error("Error:", error);
-          document.getElementById("error").innerText = "An error occurred. Please try again later.";
+          document.getElementById("error").innerText =
+            "An error occurred. Please try again later.";
         });
     } else {
       document.getElementById("error").innerText =
@@ -86,8 +87,7 @@ const handleLogin = (event) => {
           messageElement.innerHTML = `<p class="text-green-500">Login successful!</p>`;
           window.location.href = "index.html";
 
-        }
-        else {
+        } else {
           messageElement.innerHTML = `<p class="text-red-500">Invalid credentials. Please try again.</p>`;
         }
       })
@@ -95,8 +95,7 @@ const handleLogin = (event) => {
         console.error("Error:", error);
         messageElement.innerHTML = `<p class="text-red-500">Invalid username or password.</p>`;
       });
-  }
-  else {
+  } else {
     messageElement.innerHTML = `<p class="text-red-500">Please enter both username and password.</p>`;
   }
 };
@@ -120,20 +119,21 @@ const handlelogOut = () => {
 };
 
 // JavaScript code to trigger SweetAlert
-document.getElementById("showAlert").addEventListener("click", function () {
-  // Basic SweetAlert example
-  Swal.fire({
-    title: "Hello!",
-    text: "This is a SweetAlert dialog.",
-    icon: "success",
-    confirmButtonText: "OK",
-  });
-});
+// document.getElementById("showAlert").addEventListener("click", function () {
+//   // Basic SweetAlert example
+//   Swal.fire({
+//     title: "Hello!",
+//     text: "This is a SweetAlert dialog.",
+//     icon: "success",
+//     confirmButtonText: "OK",
+//   });
+// });
 
 // for profile show
 
 // Function to check if the user is authenticated
 const isAuthenticated = () => {
+  document.getElementById('Login_nv').style.display = 'none';
   // Check if the user token exists in local storage or session storage
   const token =
     localStorage.getItem("token") || sessionStorage.getItem("token");
