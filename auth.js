@@ -133,7 +133,7 @@ const handlelogOut = () => {
 
 // Function to check if the user is authenticated
 const isAuthenticated = () => {
-  document.getElementById('Login_nv').style.display = 'none';
+  // document.getElementById('Login_nv').style.display = 'none';
   // Check if the user token exists in local storage or session storage
   const token =
     localStorage.getItem("token") || sessionStorage.getItem("token");
