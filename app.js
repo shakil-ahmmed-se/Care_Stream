@@ -2,7 +2,7 @@ const loadDoctors = () => {
   // Show spinner before fetching data
   document.getElementById('spinner').style.display = 'block';
 
-  fetch("https://creat-stream.onrender.com/doctor/list/")
+  fetch("https://care-stream-api.onrender.com/doctor/list/")
       .then(res => res.json())
       .then(data => {
           displayDoctors(data);
@@ -48,7 +48,7 @@ const loadReview = () => {
   // Show the spinner
   spinner.style.display = 'block';
   
-  fetch('https://creat-stream.onrender.com/doctor/review/')
+  fetch('https://care-stream-api.onrender.com/doctor/review/')
     .then(res => res.json())
     .then(data => {
       displayReview(data);

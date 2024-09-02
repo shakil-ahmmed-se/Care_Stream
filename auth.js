@@ -25,7 +25,7 @@ const handleRegistration = (event) => {
       )
     ) {
       console.log(info);
-      fetch("https://creat-stream.onrender.com/patient/register/", {
+      fetch("https://care-stream-api.onrender.com/patient/register/", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(info),
@@ -71,7 +71,7 @@ const handleLogin = (event) => {
   console.log(username, password);
 
   if (username && password) {
-    fetch("https://creat-stream.onrender.com/patient/login/", {
+    fetch("https://care-stream-api.onrender.com/patient/login/", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -104,7 +104,7 @@ const handleLogin = (event) => {
 const handlelogOut = () => {
   const token = localStorage.getItem("token");
 
-  fetch("https://testing-8az5.onrender.com/patient/logout/", {
+  fetch("https://care-stream-api.onrender.com/patient/logout/", {
     method: "POST",
     headers: {
       Authorization: `Token ${token}`,
