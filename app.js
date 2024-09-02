@@ -6,19 +6,17 @@ const loadDoctors = () => {
       .then(res => res.json())
       .then(data => {
           displayDoctors(data);
-          // Hide spinner after data is loaded
           document.getElementById('spinner').style.display = 'none';
       })
       .catch(err => {
           console.log(err);
-          // Hide spinner even if there is an error
           document.getElementById('spinner').style.display = 'none';
       });
 }
 
 const displayDoctors = (services) => {
   const parent = document.getElementById('slider2');
-  parent.innerHTML = ''; // Clear previous content if any
+  parent.innerHTML = ''; 
 
   services.forEach((service) => {
       const li = document.createElement('li');

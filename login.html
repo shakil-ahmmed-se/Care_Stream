@@ -40,7 +40,7 @@
 
           <div class="login-container">
             <div class="col-md-6 login_form">
-              <h1 class="title">Please Login</h1>
+              <h1 class="title_login">Please Login</h1>
               <form>
                 <input
                   id="login-username"
@@ -57,10 +57,13 @@
                   placeholder="Password"
                   required
                   value=""
-                /><br />
+                />
+                <br>
+                <div id="login-message"></div>
+                <br />
                 <button onclick="handleLogin(event)" class="submit-btn">Login</button>
                 <p class="creat-account">
-                  <a class="text-white" href="#">Create Account?  Register</a>
+                  <a class="text-black" href="#">Create Account?  Register</a>
                 </p>
               </form>
             </div>
